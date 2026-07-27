@@ -93,7 +93,7 @@ img{ max-width:100%; display:block; }
   content:""; position:absolute; left:0; right:0; bottom:-4px; height:2px; background: var(--gold);
 }
 .nav-cta{ margin-left:6px; }
-.nav .nav-cta{ color:#fff; }
+.nav a.nav-cta{ color:#fff; padding: 10px 22px; display:inline-flex; align-items:center; }
 .nav .lang-toggle{
   color: var(--maroon); font-size:.82rem; font-weight:700; padding:6px 14px;
   border:1.5px solid var(--maroon); border-radius:999px; margin-left:6px; white-space:nowrap;
@@ -176,12 +176,21 @@ img{ max-width:100%; display:block; }
   background:#fff; border-radius: var(--radius); overflow:hidden; box-shadow: var(--shadow);
   display:flex; flex-direction:column;
 }
-.card img{ height:190px; width:100%; object-fit:cover; }
+.card img{ height:190px; width:100%; object-fit:cover; object-position: top center; }
 .card-body{ padding: 20px 22px; flex:1; display:flex; flex-direction:column; }
 .card-tag{ font-size:.72rem; text-transform:uppercase; letter-spacing:1.5px; color: var(--gold); font-weight:700; margin-bottom:6px; }
 .card h3{ font-size:1.1rem; margin-bottom:8px; }
 .card p{ font-size:.92rem; color:#5a5145; flex:1; }
 .card-link{ font-weight:700; color:var(--maroon); font-size:.88rem; margin-top:10px; }
+
+/* Horizontal event card — photo left, details right */
+.card-horizontal{ flex-direction: row; align-items: stretch; }
+.card-horizontal img{ width: 260px; height:auto; flex-shrink:0; object-fit:cover; object-position: top center; }
+.card-horizontal .card-body{ justify-content:center; }
+@media (max-width: 640px){
+  .card-horizontal{ flex-direction: column; }
+  .card-horizontal img{ width:100%; height:220px; }
+}
 
 /* Video embeds */
 .video-grid{ display:grid; grid-template-columns: repeat(auto-fit,minmax(300px,1fr)); gap:24px; }
