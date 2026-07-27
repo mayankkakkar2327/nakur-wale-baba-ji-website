@@ -20,6 +20,7 @@
 .tl-body{ border-left:3px solid var(--gold); padding-left:22px; position:relative; }
 .tl-body::before{ content:""; position:absolute; left:-8px; top:4px; width:13px; height:13px; border-radius:50%; background:var(--maroon); }
 @media (max-width:600px){ .tl-item{ grid-template-columns:1fr; } .tl-year{ text-align:left; } }
+.baba-photo{ max-width:280px; margin:0 auto 32px; border-radius:var(--radius); box-shadow:var(--shadow); }
 </style>
 </head>
 <body>
@@ -28,17 +29,18 @@
   <div class="header-inner">
     <a href="index.html" class="brand">
       <img src="https://nakurwalebabaji.com/images/logo.png" alt="Nakur Wale Baba Ji" onerror="this.style.display='none'">
-      <div class="brand-text"><div class="title">Nakur Wale Baba Ji</div><div class="sub">Nakur, Saharanpur, Uttar Pradesh</div></div>
+      <div class="brand-text"><div class="title" data-en="Nakur Wale Baba Ji" data-hi="नकुड़ वाले बाबा जी">Nakur Wale Baba Ji</div><div class="sub" data-en="Nakur, Saharanpur, Uttar Pradesh" data-hi="नकुड़, सहारनपुर, उत्तर प्रदेश">Nakur, Saharanpur, Uttar Pradesh</div></div>
     </a>
     <nav class="nav">
-      <a href="index.html">Home</a>
-      <a href="about.html" class="active">About</a>
-      <a href="events.html">Latest Events</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="ashrams.html">Ashrams</a>
-      <a href="seva.html">Seva</a>
-      <a href="contact.html">Contact</a>
-      <a href="contact.html" class="btn btn-primary nav-cta">Get in Touch</a>
+      <a href="index.html" data-en="Home" data-hi="होम">Home</a>
+      <a href="about.html" class="active" data-en="About" data-hi="परिचय">About</a>
+      <a href="events.html" data-en="Latest Events" data-hi="ताज़ा कार्यक्रम">Latest Events</a>
+      <a href="gallery.html" data-en="Gallery" data-hi="गैलरी">Gallery</a>
+      <a href="ashrams.html" data-en="Ashrams" data-hi="आश्रम">Ashrams</a>
+      <a href="seva.html" data-en="Seva" data-hi="सेवा">Seva</a>
+      <a href="contact.html" data-en="Contact" data-hi="संपर्क">Contact</a>
+      <a href="contact.html" class="btn btn-primary nav-cta" data-en="Get in Touch" data-hi="संपर्क करें">Get in Touch</a>
+      <a href="#" id="lang-toggle" class="lang-toggle" data-en="हिंदी में पढ़ें" data-hi="En">हिंदी में पढ़ें</a>
     </nav>
     <button class="nav-toggle" aria-label="Menu">&#9776;</button>
   </div>
@@ -47,12 +49,12 @@
 <section class="section" style="padding-bottom:0;">
   <div class="container">
     <div class="section-head">
-      <div class="overline">Guru Parampara</div>
-      <h2>About</h2>
+      <div class="overline" data-en="Guru Parampara" data-hi="गुरु परंपरा">Guru Parampara</div>
+      <h2 data-en="About" data-hi="परिचय">About</h2>
     </div>
     <div class="tabs-row">
-      <button class="tab-btn active" data-target="tab-baba">About Nakur Wale Baba Ji</button>
-      <button class="tab-btn" data-target="tab-devi">About Devi Ji</button>
+      <button class="tab-btn active" data-target="tab-baba" data-en="About Nakur Wale Baba Ji" data-hi="नकुड़ वाले बाबा जी के बारे में">About Nakur Wale Baba Ji</button>
+      <button class="tab-btn" data-target="tab-devi" data-en="About Devi Ji" data-hi="देवी जी के बारे में">About Devi Ji</button>
     </div>
   </div>
 </section>
@@ -61,24 +63,25 @@
   <div class="container">
 
     <div class="tab-panel active" id="tab-baba">
+      <img class="baba-photo" src="https://nakurwalebabaji.com/images/Nakud%20wale%20baba%20ji/photo1.jpg" alt="Nakur Wale Baba Ji">
       <div class="center" style="max-width:700px;margin:0 auto 40px;">
-        <p style="font-family:'Noto Serif Devanagari',serif;font-size:1.2rem;color:var(--maroon);font-style:italic;">
+        <p style="font-family:'Noto Serif Devanagari',serif;font-size:1.2rem;color:var(--maroon);font-style:italic;" data-en="&quot;Whoever keeps others' welfare in mind, their own welfare follows on its own.&quot;" data-hi="&quot;औरों के कल्याण में रहता जिनका ध्यान, उनका अपने आप हो जाता कल्याण।&quot;">
           "Whoever keeps others' welfare in mind, their own welfare follows on its own."
         </p>
       </div>
       <div class="timeline">
-        <div class="tl-item"><div class="tl-year">1912</div><div class="tl-body"><h4 style="margin-top:0;">Born in Bamnauli</h4><p>Born in village Bamnauli, district Baghpat, on Chaitra Shukla Ashtami. His mother Bharti Devi's deep devotion to Shri Ram took root in the child from birth.</p></div></div>
-        <div class="tl-item"><div class="tl-year">Childhood</div><div class="tl-body"><h4 style="margin-top:0;">Jahan Singh — servant of the suffering</h4><p>Given the name Jahan Singh. Even as a boy, his heart ached for the suffering and was always drawn toward serving others.</p></div></div>
-        <div class="tl-item"><div class="tl-year">1934</div><div class="tl-body"><h4 style="margin-top:0;">Marriage</h4><p>Married Bhagirathi Devi.</p></div></div>
-        <div class="tl-item"><div class="tl-year">1936</div><div class="tl-body"><h4 style="margin-top:0;">Son born; joined the police</h4><p>Son Jagpal Singh born. Joined the police department on 18 January 1936.</p></div></div>
-        <div class="tl-item"><div class="tl-year">1940</div><div class="tl-body"><h4 style="margin-top:0;">Steadfast on the path of duty</h4><p>His wife passed away; he remained steadfast on the path of duty regardless. Served on duty alongside figures such as Gandhiji, Nehruji, Rajendra Prasad and Shastriji.</p></div></div>
-        <div class="tl-item"><div class="tl-year">1949–50</div><div class="tl-body"><h4 style="margin-top:0;">Meeting the guides</h4><p>In Kanpur, met Shri Gambhiranand Ji and Shri Ramshankar Pathak Ji — the seeds of Ram-devotion sown by his mother fully awakened.</p></div></div>
-        <div class="tl-item"><div class="tl-year">1953–54</div><div class="tl-body"><h4 style="margin-top:0;">Ramayana discourses and the title 'Baba'</h4><p>Began discourses on the Ramayana at the Saharanpur Police Lines. Even senior officers were moved — and it was the police department itself that gave him the title 'Baba'.</p></div></div>
-        <div class="tl-item"><div class="tl-year">1960</div><div class="tl-body"><h4 style="margin-top:0;">Selfless service, retirement</h4><p>Continued tireless, selfless discourses through sun and rain, never accepting a single coin for it. Retired from police service in January 1960.</p></div></div>
-        <div class="tl-item"><div class="tl-year">1981</div><div class="tl-body"><h4 style="margin-top:0;">Sannyas — Shri Ramanand Saraswati</h4><p>Took sannyas (renunciation) from Shri Narayan Muni Ji at Haridwar on 5 September 1981. Moved by his devotion to Ram, his guru gave him the name 'Shri Ramanand Saraswati'.</p></div></div>
-        <div class="tl-item"><div class="tl-year">2003</div><div class="tl-body"><h4 style="margin-top:0;">Mahasamadhi</h4><p>On the evening of 15 January 2003, at 5:55 pm, he merged into the Divine while absorbed in meditation on Shri Ram. He was given bhoo-samadhi the next day at the satsang hall, Pant Vihar.</p></div></div>
-        <div class="tl-item"><div class="tl-year">Legacy</div><div class="tl-body"><h4 style="margin-top:0;">An imprint that remains</h4><p>His name and presence remain etched in devotees' hearts to this day — "Blessed are such saints, for the glory of the noble exists only for the good of others" (परोपकाराय सतां विभूतयः).</p></div></div>
-        <div class="tl-item"><div class="tl-year">Succession</div><div class="tl-body"><h4 style="margin-top:0;">Sant Devi Sudiksha Saraswati Ji</h4><p>His devoted disciple and successor, Shri Shri 108 Sant Devi Sudiksha Saraswati Ji, walks his path today — continuing his work of seva, sacrifice and devotion for the welfare of all.</p></div></div>
+        <div class="tl-item"><div class="tl-year">1912</div><div class="tl-body"><h4 style="margin-top:0;" data-en="Born in Bamnauli" data-hi="बामनौली में जन्म">Born in Bamnauli</h4><p data-en="Born in village Bamnauli, district Baghpat, on Chaitra Shukla Ashtami. His mother Bharti Devi's deep devotion to Shri Ram took root in the child from birth." data-hi="ग्राम बामनौली, जिला बागपत में चैत्र शुक्ल अष्टमी को जन्म हुआ। माता भारती देवी की श्री राम के प्रति गहरी भक्ति बचपन से ही बालक में स्थापित हो गई थी।">Born in village Bamnauli, district Baghpat, on Chaitra Shukla Ashtami. His mother Bharti Devi's deep devotion to Shri Ram took root in the child from birth.</p></div></div>
+        <div class="tl-item"><div class="tl-year" data-en="Childhood" data-hi="बचपन">Childhood</div><div class="tl-body"><h4 style="margin-top:0;" data-en="Jahan Singh — servant of the suffering" data-hi="जहान सिंह — दुखियों के सेवक">Jahan Singh — servant of the suffering</h4><p data-en="Given the name Jahan Singh. Even as a boy, his heart ached for the suffering and was always drawn toward serving others." data-hi="नाम जहान सिंह रखा गया। बचपन से ही उनका हृदय दुखियों के लिए द्रवित रहता था और वे सदैव दूसरों की सेवा की ओर आकर्षित रहते थे।">Given the name Jahan Singh. Even as a boy, his heart ached for the suffering and was always drawn toward serving others.</p></div></div>
+        <div class="tl-item"><div class="tl-year">1934</div><div class="tl-body"><h4 style="margin-top:0;" data-en="Marriage" data-hi="विवाह">Marriage</h4><p data-en="Married Bhagirathi Devi." data-hi="भागीरथी देवी से विवाह हुआ।">Married Bhagirathi Devi.</p></div></div>
+        <div class="tl-item"><div class="tl-year">1936</div><div class="tl-body"><h4 style="margin-top:0;" data-en="Son born; joined the police" data-hi="पुत्र जन्म और पुलिस विभाग में भर्ती">Son born; joined the police</h4><p data-en="Son Jagpal Singh born. Joined the police department on 18 January 1936." data-hi="पुत्र जगपाल सिंह का जन्म हुआ। 18 जनवरी 1936 को पुलिस विभाग में भर्ती हुए।">Son Jagpal Singh born. Joined the police department on 18 January 1936.</p></div></div>
+        <div class="tl-item"><div class="tl-year">1940</div><div class="tl-body"><h4 style="margin-top:0;" data-en="Steadfast on the path of duty" data-hi="कर्तव्य पथ पर अडिग">Steadfast on the path of duty</h4><p data-en="His wife passed away; he remained steadfast on the path of duty regardless. Served on duty alongside figures such as Gandhiji, Nehruji, Rajendra Prasad and Shastriji." data-hi="पत्नी का देहांत हो गया, फिर भी वे कर्तव्य पथ पर अडिग रहे। गांधीजी, नेहरूजी, राजेंद्र प्रसाद और शास्त्रीजी जैसी विभूतियों के साथ ड्यूटी पर सेवा दी।">His wife passed away; he remained steadfast on the path of duty regardless. Served on duty alongside figures such as Gandhiji, Nehruji, Rajendra Prasad and Shastriji.</p></div></div>
+        <div class="tl-item"><div class="tl-year">1949–50</div><div class="tl-body"><h4 style="margin-top:0;" data-en="Meeting the guides" data-hi="मार्गदर्शकों से भेंट">Meeting the guides</h4><p data-en="In Kanpur, met Shri Gambhiranand Ji and Shri Ramshankar Pathak Ji — the seeds of Ram-devotion sown by his mother fully awakened." data-hi="कानपुर में श्री गंभीरानंद जी और श्री रामशंकर पाठक जी से भेंट हुई — माता द्वारा बोए गए राम-भक्ति के बीज पूर्णतः जाग्रत हो उठे।">In Kanpur, met Shri Gambhiranand Ji and Shri Ramshankar Pathak Ji — the seeds of Ram-devotion sown by his mother fully awakened.</p></div></div>
+        <div class="tl-item"><div class="tl-year">1953–54</div><div class="tl-body"><h4 style="margin-top:0;" data-en="Ramayana discourses and the title 'Baba'" data-hi="रामायण प्रवचन और 'बाबा' की उपाधि">Ramayana discourses and the title 'Baba'</h4><p data-en="Began discourses on the Ramayana at the Saharanpur Police Lines. Even senior officers were moved — and it was the police department itself that gave him the title 'Baba'." data-hi="सहारनपुर पुलिस लाइन में रामायण पर प्रवचन आरंभ किए। वरिष्ठ अधिकारी भी भावविभोर हो उठे — और स्वयं पुलिस विभाग ने उन्हें 'बाबा' की उपाधि दी।">Began discourses on the Ramayana at the Saharanpur Police Lines. Even senior officers were moved — and it was the police department itself that gave him the title 'Baba'.</p></div></div>
+        <div class="tl-item"><div class="tl-year">1960</div><div class="tl-body"><h4 style="margin-top:0;" data-en="Selfless service, retirement" data-hi="निःस्वार्थ सेवा, सेवानिवृत्ति">Selfless service, retirement</h4><p data-en="Continued tireless, selfless discourses through sun and rain, never accepting a single coin for it. Retired from police service in January 1960." data-hi="धूप और वर्षा में भी अथक, निःस्वार्थ प्रवचन जारी रखे, कभी एक पैसा भी स्वीकार नहीं किया। जनवरी 1960 में पुलिस सेवा से सेवानिवृत्त हुए।">Continued tireless, selfless discourses through sun and rain, never accepting a single coin for it. Retired from police service in January 1960.</p></div></div>
+        <div class="tl-item"><div class="tl-year">1981</div><div class="tl-body"><h4 style="margin-top:0;" data-en="Sannyas — Shri Ramanand Saraswati" data-hi="संन्यास — श्री रामानंद सरस्वती">Sannyas — Shri Ramanand Saraswati</h4><p data-en="Took sannyas (renunciation) from Shri Narayan Muni Ji at Haridwar on 5 September 1981. Moved by his devotion to Ram, his guru gave him the name 'Shri Ramanand Saraswati'." data-hi="5 सितंबर 1981 को हरिद्वार में श्री नारायण मुनि जी से संन्यास ग्रहण किया। उनकी राम-भक्ति से प्रभावित होकर गुरु ने उन्हें 'श्री रामानंद सरस्वती' नाम दिया।">Took sannyas (renunciation) from Shri Narayan Muni Ji at Haridwar on 5 September 1981. Moved by his devotion to Ram, his guru gave him the name 'Shri Ramanand Saraswati'.</p></div></div>
+        <div class="tl-item"><div class="tl-year">2003</div><div class="tl-body"><h4 style="margin-top:0;" data-en="Mahasamadhi" data-hi="महासमाधि">Mahasamadhi</h4><p data-en="On the evening of 15 January 2003, at 5:55 pm, he merged into the Divine while absorbed in meditation on Shri Ram. He was given bhoo-samadhi the next day at the satsang hall, Pant Vihar." data-hi="15 जनवरी 2003 की संध्या, 5:55 बजे, श्री राम के ध्यान में लीन होते हुए वे परमात्मा में विलीन हो गए। अगले दिन पंत विहार स्थित सत्संग भवन में भू-समाधि दी गई।">On the evening of 15 January 2003, at 5:55 pm, he merged into the Divine while absorbed in meditation on Shri Ram. He was given bhoo-samadhi the next day at the satsang hall, Pant Vihar.</p></div></div>
+        <div class="tl-item"><div class="tl-year" data-en="Legacy" data-hi="विरासत">Legacy</div><div class="tl-body"><h4 style="margin-top:0;" data-en="An imprint that remains" data-hi="एक अमिट छाप">An imprint that remains</h4><p data-en="His name and presence remain etched in devotees' hearts to this day — &quot;Blessed are such saints, for the glory of the noble exists only for the good of others&quot; (परोपकाराय सतां विभूतयः)." data-hi="उनका नाम और उपस्थिति आज भी भक्तों के हृदय में अंकित है — 'ऐसे संत धन्य हैं, क्योंकि श्रेष्ठ जनों की महिमा केवल दूसरों की भलाई के लिए होती है' (परोपकाराय सतां विभूतयः)।">His name and presence remain etched in devotees' hearts to this day — "Blessed are such saints, for the glory of the noble exists only for the good of others" (परोपकाराय सतां विभूतयः).</p></div></div>
+        <div class="tl-item"><div class="tl-year" data-en="Succession" data-hi="उत्तराधिकार">Succession</div><div class="tl-body"><h4 style="margin-top:0;" data-en="Sant Devi Sudiksha Saraswati Ji" data-hi="संत देवी सुदीक्षा सरस्वती जी">Sant Devi Sudiksha Saraswati Ji</h4><p data-en="His devoted disciple and successor, Shri Shri 108 Sant Devi Sudiksha Saraswati Ji, walks his path today — continuing his work of seva, sacrifice and devotion for the welfare of all." data-hi="उनकी भक्त शिष्या और उत्तराधिकारी, श्री श्री 108 संत देवी सुदीक्षा सरस्वती जी, आज भी उनके पथ पर चल रही हैं — सभी के कल्याण हेतु सेवा, त्याग और भक्ति का कार्य जारी रखते हुए।">His devoted disciple and successor, Shri Shri 108 Sant Devi Sudiksha Saraswati Ji, walks his path today — continuing his work of seva, sacrifice and devotion for the welfare of all.</p></div></div>
       </div>
     </div>
 
@@ -86,13 +89,10 @@
       <div class="bio-grid">
         <img src="https://nakurwalebabaji.com/images/Devi%20ji/devi-ji.png" alt="Sant Devi Sudiksha Saraswati Ji">
         <div>
-          <h2>Sant Devi Sudiksha Saraswati Ji</h2>
-          <p>Sushri Devi Sudiksha Saraswati Ji has been Nakur Wale Baba Ji's disciple since 1969. In 1970 he gave her the Shri Ramcharitmanas as prasad from Haridwar and inspired her to study and reflect on it; in 1971 he placed her in the education department, where her work continues to this day. She has been honoured with the President's Medal for this work, and today continues Baba Ji's path of seva, sacrifice and devotion as his successor.</p>
-          <div class="pull-quote">"Ram te adhik Ram kar dasa, tum te adhik guruhi jiya jaani" — from her own tribute to Baba Ji, reflecting the depth of her devotion to her guru.</div>
+          <h2 data-en="Sant Devi Sudiksha Saraswati Ji" data-hi="संत देवी सुदीक्षा सरस्वती जी">Sant Devi Sudiksha Saraswati Ji</h2>
+          <p data-en="Sushri Devi Sudiksha Saraswati Ji has been Nakur Wale Baba Ji's disciple since 1969. In 1970 he gave her the Shri Ramcharitmanas as prasad from Haridwar and inspired her to study and reflect on it; in 1971 he placed her in the education department, where her work continues to this day. She has been honoured with the President's Medal for this work, and today continues Baba Ji's path of seva, sacrifice and devotion as his successor." data-hi="सुश्री देवी सुदीक्षा सरस्वती जी 1969 से नकुड़ वाले बाबा जी की शिष्या रही हैं। 1970 में उन्होंने हरिद्वार से श्री रामचरितमानस प्रसाद स्वरूप भेंट किया और उसे मनन-चिंतन करने की प्रेरणा दी; 1971 में उन्हें शिक्षा विभाग में सेवा का अवसर दिया, जो आज भी जारी है। इस कार्य के लिए उन्हें राष्ट्रपति पदक से सम्मानित किया गया है, और आज वे बाबा जी के उत्तराधिकारी के रूप में सेवा, त्याग और भक्ति के पथ को आगे बढ़ा रही हैं।">Sushri Devi Sudiksha Saraswati Ji has been Nakur Wale Baba Ji's disciple since 1969. In 1970 he gave her the Shri Ramcharitmanas as prasad from Haridwar and inspired her to study and reflect on it; in 1971 he placed her in the education department, where her work continues to this day. She has been honoured with the President's Medal for this work, and today continues Baba Ji's path of seva, sacrifice and devotion as his successor.</p>
+          <div class="pull-quote" data-en="&quot;Ram te adhik Ram kar dasa, tum te adhik guruhi jiya jaani&quot; — from her own tribute to Baba Ji, reflecting the depth of her devotion to her guru." data-hi="&quot;राम ते अधिक राम कर दासा, तुम ते अधिक गुरुहि जिय जानी&quot; — बाबा जी के प्रति उनकी अपनी श्रद्धांजलि से, जो अपने गुरु के प्रति उनकी भक्ति की गहराई को दर्शाती है।">"Ram te adhik Ram kar dasa, tum te adhik guruhi jiya jaani" — from her own tribute to Baba Ji, reflecting the depth of her devotion to her guru.</div>
         </div>
-      </div>
-      <div class="badge-info" style="max-width:900px;margin:36px auto 0;">
-        The content above draws on Devi Ji's own tribute/dedication letter to Baba Ji. A fuller biography — her own background, initiation, and the initiatives she personally leads today — can be added here once available.
       </div>
     </div>
 
@@ -103,8 +103,8 @@
   <div class="container">
     <div class="footer-grid">
       <div>
-        <h4>Nakur Wale Baba Ji</h4>
-        <p>Nakur, Saharanpur, Uttar Pradesh<br>A sacred place of satsang, kirtan, seva and devotion — open to all seekers of divine love and inner peace.</p>
+        <h4 data-en="Nakur Wale Baba Ji" data-hi="नकुड़ वाले बाबा जी">Nakur Wale Baba Ji</h4>
+        <p data-en="Nakur, Saharanpur, Uttar Pradesh<br>A sacred place of satsang, kirtan, seva and devotion — open to all seekers of divine love and inner peace." data-hi="नकुड़, सहारनपुर, उत्तर प्रदेश<br>सत्संग, कीर्तन, सेवा और भक्ति का एक पावन स्थल — दिव्य प्रेम और आंतरिक शांति के सभी साधकों के लिए खुला।">Nakur, Saharanpur, Uttar Pradesh<br>A sacred place of satsang, kirtan, seva and devotion — open to all seekers of divine love and inner peace.</p>
         <div class="social-row">
           <a href="https://www.youtube.com/@bawavideo" target="_blank" rel="noopener" title="YouTube">YT</a>
           <a href="https://www.facebook.com/bawajinakurwale" target="_blank" rel="noopener" title="Facebook">FB</a>
@@ -112,28 +112,30 @@
         </div>
       </div>
       <div>
-        <h4>Quick Links</h4>
+        <h4 data-en="Quick Links" data-hi="त्वरित लिंक">Quick Links</h4>
         <ul class="footer-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="events.html">Latest Events</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="ashrams.html">Ashrams (Centres)</a></li>
-          <li><a href="seva.html">Seva</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="index.html" data-en="Home" data-hi="होम">Home</a></li>
+          <li><a href="about.html" data-en="About" data-hi="परिचय">About</a></li>
+          <li><a href="events.html" data-en="Latest Events" data-hi="ताज़ा कार्यक्रम">Latest Events</a></li>
+          <li><a href="gallery.html" data-en="Gallery" data-hi="गैलरी">Gallery</a></li>
+          <li><a href="ashrams.html" data-en="Ashrams (Centres)" data-hi="आश्रम (केंद्र)">Ashrams (Centres)</a></li>
+          <li><a href="seva.html" data-en="Seva" data-hi="सेवा">Seva</a></li>
+          <li><a href="contact.html" data-en="Contact" data-hi="संपर्क">Contact</a></li>
         </ul>
       </div>
       <div>
-        <h4>Contact</h4>
-        <p>Pant Vihar, Saharanpur, Uttar Pradesh<br><a href="mailto:nakurwalebabaji@gmail.com">nakurwalebabaji@gmail.com</a></p>
-        <p style="font-style:italic;color:#e8d3b8;">"God is in everyone — every act of service is worship, every step is devotion."</p>
+        <h4 data-en="Contact" data-hi="संपर्क">Contact</h4>
+        <p data-en="Pant Vihar, Saharanpur, Uttar Pradesh" data-hi="पंत विहार, सहारनपुर, उत्तर प्रदेश">Pant Vihar, Saharanpur, Uttar Pradesh</p>
+        <p><a href="mailto:nakurwalebabaji@gmail.com">nakurwalebabaji@gmail.com</a></p>
+        <p style="font-style:italic;" data-en="&quot;God is in everyone — every act of service is worship, every step is devotion.&quot;" data-hi="&quot;सब में ईश्वर है — हर सेवा में सेवा, हर कदम में भक्ति।&quot;">"God is in everyone — every act of service is worship, every step is devotion."</p>
       </div>
     </div>
-    <div class="footer-bottom">© 2026 Shri Nakur Wale Baba Ji. All rights reserved. Saraswati Yuva Sangathan Trust (Regd.), Pant Vihar, Saharanpur.</div>
+    <div class="footer-bottom" data-en="© 2026 Shri Nakur Wale Baba Ji. All rights reserved. Saraswati Yuva Sangathan Trust (Regd.), Pant Vihar, Saharanpur." data-hi="© 2026 श्री नकुड़ वाले बाबा जी। सर्वाधिकार सुरक्षित। सरस्वती युवा संगठन ट्रस्ट (रजि.), पंत विहार, सहारनपुर।">© 2026 Shri Nakur Wale Baba Ji. All rights reserved. Saraswati Yuva Sangathan Trust (Regd.), Pant Vihar, Saharanpur.</div>
   </div>
 </footer>
 
 <script src="assets/js/main.js"></script>
+<script src="assets/js/i18n.js"></script>
 <script>
 document.addEventListener("DOMContentLoaded", function(){
   document.querySelectorAll(".tab-btn").forEach(function(btn){
