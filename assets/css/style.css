@@ -93,6 +93,12 @@ img{ max-width:100%; display:block; }
   content:""; position:absolute; left:0; right:0; bottom:-4px; height:2px; background: var(--gold);
 }
 .nav-cta{ margin-left:6px; }
+.nav .nav-cta{ color:#fff; }
+.nav .lang-toggle{
+  color: var(--maroon); font-size:.82rem; font-weight:700; padding:6px 14px;
+  border:1.5px solid var(--maroon); border-radius:999px; margin-left:6px; white-space:nowrap;
+}
+.nav .lang-toggle:hover{ background: var(--maroon); color:#fff; }
 .nav-toggle{ display:none; background:none; border:none; font-size:1.6rem; color:var(--maroon); cursor:pointer; }
 
 @media (max-width: 900px){
@@ -151,15 +157,18 @@ img{ max-width:100%; display:block; }
 }
 @media (max-width: 800px){ .bio-grid{ grid-template-columns:1fr; } }
 
-/* Teachings */
-.teach-grid{ display:grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap:22px; }
+/* Teachings — infinite horizontal scroll */
+.teach-scroll{ overflow:hidden; width:100%; padding: 10px 0 4px; -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent); mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent); }
+.teach-track{ display:flex; gap:22px; width:max-content; animation: teach-scroll-left 34s linear infinite; }
+.teach-scroll:hover .teach-track{ animation-play-state: paused; }
 .teach-card{
   background:#fff; border-radius: var(--radius); padding: 26px 24px; box-shadow: var(--shadow);
   border-bottom: 3px solid var(--gold);
+  min-width:280px; max-width:280px; flex: 0 0 auto;
 }
-.teach-num{ font-family:'Merriweather',serif; font-size:2rem; color: rgba(184,134,11,.35); font-weight:700; }
-.teach-card h4{ font-size:1.02rem; margin: 6px 0 8px; color:var(--maroon); }
+.teach-card h4{ font-size:1.02rem; margin: 0 0 8px; color:var(--maroon); }
 .teach-card p{ font-size:.92rem; color:#5a5145; margin:0; }
+@keyframes teach-scroll-left{ from{ transform: translateX(0); } to{ transform: translateX(-50%); } }
 
 /* Card grids (events, ashrams) */
 .card-grid{ display:grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap:26px; }
@@ -193,18 +202,20 @@ img{ max-width:100%; display:block; }
 .gallery-panel.active{ display:block; }
 .gallery-caption{ font-size:.78rem; color:var(--grey); text-align:center; margin-top:6px; }
 
-/* Seva */
-.seva-grid{ display:grid; grid-template-columns: repeat(auto-fit,minmax(260px,1fr)); gap:24px; }
-.seva-card{ background:#fff; border-radius:var(--radius); padding:26px; box-shadow:var(--shadow); }
-.seva-stat{ display:inline-block; background: var(--cream-dark); color:var(--maroon); font-weight:700; font-size:.8rem; padding:5px 14px; border-radius:999px; margin-bottom:10px; }
-.donate-box{
-  background: linear-gradient(135deg, var(--maroon), var(--maroon-dark)); color:#fff; border-radius: var(--radius);
-  padding: 40px; display:grid; grid-template-columns: 1fr 1fr; gap:36px; align-items:center;
+/* Seva — heading-only bullet list */
+.seva-list{ list-style:none; padding:0; margin:0 auto; max-width:760px; display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:18px; }
+.seva-list li{
+  background:#fff; border-radius:12px; padding:20px 24px; box-shadow:var(--shadow);
+  border-left:4px solid var(--gold); font-weight:700; color:var(--maroon); font-size:1.08rem;
 }
-.donate-box img{ border-radius:10px; max-width:220px; margin:0 auto; }
-.donate-box .upi{ font-family:monospace; background:rgba(255,255,255,.15); padding:8px 14px; border-radius:8px; display:inline-block; margin: 10px 0; }
-.donate-note{ font-size:.85rem; color:#f0dcc8; }
-@media (max-width:760px){ .donate-box{ grid-template-columns:1fr; text-align:center; } }
+
+/* Donate box — simplified: UPI ID + QR only */
+.donate-box-simple{
+  background: linear-gradient(135deg, var(--maroon), var(--maroon-dark)); color:#fff; border-radius: var(--radius);
+  padding: 44px; text-align:center; max-width:420px; margin:0 auto;
+}
+.donate-box-simple img{ border-radius:10px; max-width:260px; margin:20px auto 0; box-shadow:0 10px 30px rgba(0,0,0,.3); }
+.donate-box-simple .upi{ font-family:monospace; font-size:1.1rem; background:rgba(255,255,255,.15); padding:10px 20px; border-radius:8px; display:inline-block; }
 
 /* Contact */
 .contact-grid{ display:grid; grid-template-columns: 1fr 1fr; gap:44px; }
@@ -230,13 +241,21 @@ img{ max-width:100%; display:block; }
 .site-footer{ background: var(--maroon-dark); color:#f0e2cf; padding: 56px 0 24px; margin-top:60px; }
 .footer-grid{ display:grid; grid-template-columns: 1.4fr 1fr 1fr; gap:36px; margin-bottom:36px; }
 .site-footer h4{ color:#fff; font-size:1rem; margin-bottom:14px; }
-.site-footer a{ color:#ecdcc4; opacity:.85; }
+.site-footer p{ color:#f0e2cf; }
+.site-footer a{ color:#ecdcc4; opacity:.9; }
 .site-footer a:hover{ opacity:1; text-decoration:underline; }
 .footer-links li{ list-style:none; margin-bottom:8px; }
 .footer-links{ padding:0; margin:0; }
 .social-row{ display:flex; gap:14px; margin-top:14px; }
-.social-row a{ width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,.1); display:flex; align-items:center; justify-content:center; }
-.footer-bottom{ border-top: 1px solid rgba(255,255,255,.15); padding-top:20px; font-size:.82rem; color:#d9c3a4; text-align:center; }
+.social-row a{ width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,.1); display:flex; align-items:center; justify-content:center; color:#fff; }
+.footer-bottom{ border-top: 1px solid rgba(255,255,255,.15); padding-top:20px; font-size:.82rem; color:#e8d8c2; text-align:center; }
+
+/* Lightbox (gallery popup) */
+.lightbox{ display:none; position:fixed; inset:0; background:rgba(20,10,5,.92); z-index:1000; align-items:center; justify-content:center; padding:40px; }
+.lightbox.open{ display:flex; }
+.lightbox img{ max-width:90vw; max-height:88vh; border-radius:10px; box-shadow:0 20px 60px rgba(0,0,0,.5); }
+.lightbox-close{ position:absolute; top:22px; right:32px; color:#fff; font-size:2.4rem; line-height:1; cursor:pointer; font-family:sans-serif; }
+.gallery-grid img, .lightbox-trigger{ cursor:pointer; }
 @media (max-width:800px){ .footer-grid{ grid-template-columns:1fr; } }
 
 /* Utility */
