@@ -86,14 +86,16 @@ img{ max-width:100%; display:block; }
 .brand img{ height:48px; width:48px; border-radius:50%; object-fit:cover; }
 .brand-text .title{ font-family:'Merriweather',serif; font-weight:700; color:var(--maroon); font-size:1.05rem; }
 .brand-text .sub{ font-size:.72rem; color:var(--grey); letter-spacing:.5px; }
-.nav{ display:flex; align-items:center; gap:28px; }
-.nav a{ font-weight:600; font-size:.92rem; color: var(--ink); position:relative; padding: 4px 0; }
+.nav{ display:flex; align-items:center; gap:22px; flex-wrap:nowrap; }
+.nav a{ font-weight:600; font-size:.92rem; color: var(--ink); position:relative; padding: 4px 0; white-space:nowrap; }
 .nav a:hover, .nav a.active{ color: var(--maroon); }
 .nav a.active::after{
   content:""; position:absolute; left:0; right:0; bottom:-4px; height:2px; background: var(--gold);
 }
 .nav-cta{ margin-left:6px; }
 .nav a.nav-cta{ color:#fff; padding: 10px 22px; display:inline-flex; align-items:center; }
+.nav a.nav-cta.active::after{ content:none; }
+.nav a.nav-cta:hover{ color:#fff; }
 .nav .lang-toggle{
   color: var(--maroon); font-size:.82rem; font-weight:700; padding:6px 14px;
   border:1.5px solid var(--maroon); border-radius:999px; margin-left:6px; white-space:nowrap;
