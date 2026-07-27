@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery | Nakur Wale Baba Ji</title>
+<meta name="description" content="Sacred darshan, satsang, and seva moments of Shri Nakur Wale Baba Ji at the Nakur ashram.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Noto+Serif+Devanagari&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="brand">
+      <img src="https://nakurwalebabaji.com/images/logo.png" alt="Nakur Wale Baba Ji" onerror="this.style.display='none'">
+      <div class="brand-text"><div class="title">Nakur Wale Baba Ji</div><div class="sub">Nakur, Saharanpur, Uttar Pradesh</div></div>
+    </a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="events.html">Latest Events</a>
+      <a href="gallery.html" class="active">Gallery</a>
+      <a href="ashrams.html">Ashrams</a>
+      <a href="seva.html">Seva</a>
+      <a href="contact.html">Contact</a>
+      <a href="contact.html" class="btn btn-primary nav-cta">Get in Touch</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Menu">&#9776;</button>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div class="overline">Sacred Moments</div>
+      <h2>Gallery</h2>
+      <p>Moments of grace, seva and divine blessing.</p>
+    </div>
+
+    <div class="gallery-tabs">
+      <button class="gallery-tab-btn active" data-target="gallery-baba">Nakur Wale Baba Ji</button>
+      <button class="gallery-tab-btn" data-target="gallery-devi">Devi Ji</button>
+      <button class="gallery-tab-btn" data-target="gallery-events">Events</button>
+    </div>
+
+    <div class="gallery-panel active" id="gallery-panel-baba">
+      <div class="gallery-grid" id="gallery-baba"><!-- filled by gallery-data.js --></div>
+    </div>
+    <div class="gallery-panel" id="gallery-panel-devi">
+      <div class="gallery-grid" id="gallery-devi"><!-- filled by gallery-data.js --></div>
+    </div>
+    <div class="gallery-panel" id="gallery-panel-events">
+      <div class="gallery-grid" id="gallery-events"><!-- filled by gallery-data.js --></div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>Nakur Wale Baba Ji</h4>
+        <p>Nakur, Saharanpur, Uttar Pradesh<br>A sacred place of satsang, kirtan, seva and devotion — open to all seekers of divine love and inner peace.</p>
+        <div class="social-row">
+          <a href="https://www.youtube.com/@bawavideo" target="_blank" rel="noopener" title="YouTube">YT</a>
+          <a href="https://www.facebook.com/bawajinakurwale" target="_blank" rel="noopener" title="Facebook">FB</a>
+          <a href="https://www.instagram.com/nakur_wale_baba_ji/" target="_blank" rel="noopener" title="Instagram">IG</a>
+        </div>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="events.html">Latest Events</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="ashrams.html">Ashrams (Centres)</a></li>
+          <li><a href="seva.html">Seva</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>Pant Vihar, Saharanpur, Uttar Pradesh<br><a href="mailto:nakurwalebabaji@gmail.com">nakurwalebabaji@gmail.com</a></p>
+        <p style="font-style:italic;color:#e8d3b8;">"God is in everyone — every act of service is worship, every step is devotion."</p>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 Shri Nakur Wale Baba Ji. All rights reserved. Saraswati Yuva Sangathan Trust (Regd.), Pant Vihar, Saharanpur.</div>
+  </div>
+</footer>
+
+<script src="assets/js/gallery-data.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+  renderFullGallery();
+  document.querySelectorAll(".gallery-tab-btn").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      document.querySelectorAll(".gallery-tab-btn").forEach(function(b){ b.classList.remove("active"); });
+      document.querySelectorAll(".gallery-panel").forEach(function(p){ p.classList.remove("active"); });
+      btn.classList.add("active");
+      document.getElementById("gallery-panel-" + btn.getAttribute("data-target").split("-")[1]).classList.add("active");
+    });
+  });
+});
+</script>
+</body>
+</html>
