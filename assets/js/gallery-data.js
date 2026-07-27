@@ -75,24 +75,53 @@ function renderGalleryPanel(containerId, items) {
   var el = document.getElementById(containerId);
   if (!el) return;
   el.innerHTML = items.map(function (item) {
-    return '<figure style="margin:0;">' +
-      '<img src="' + item.src + '" alt="' + item.caption + '" loading="lazy">' +
-      '<figcaption class="gallery-caption">' + item.caption + '</figcaption>' +
-      '</figure>';
+    return '<img src="' + item.src + '" alt="' + item.caption + '" loading="lazy" onclick="openLightbox(this.src, this.alt)">';
   }).join("");
 }
 
 /**
- * Renders a small preview grid (homepage) mixing a few photos from each category.
+ * Renders a small preview grid (homepage) mixing photos from each category,
+ * up to `total` images altogether.
  */
-function renderGalleryPreview(containerId, countPerCategory) {
+function renderGalleryPreview(containerId, total) {
   var el = document.getElementById(containerId);
   if (!el) return;
-  var mix = []
-    .concat(GALLERY.baba.slice(0, countPerCategory))
-    .concat(GALLERY.devi.slice(0, countPerCategory))
-    .concat(GALLERY.events.slice(0, countPerCategory));
+  var cats = [GALLERY.baba, GALLERY.devi, GALLERY.events];
+  var mix = [];
+  var round = 0;
+  while (mix.length < total && round < 50) {
+    for (var i = 0; i < cats.length && mix.length < total; i++) {
+      if (cats[i][round]) mix.push(cats[i][round]);
+    }
+    round++;
+  }
   el.innerHTML = mix.map(function (item) {
     return '<img src="' + item.src + '" alt="' + item.caption + '" loading="lazy">';
   }).join("");
 }
+
+/**
+ * Lightbox popup — used on the Gallery page so photos open full-size on click.
+ */
+function openLightbox(src, alt) {
+  var lb = document.getElementById("lightbox");
+  var img = document.getElementById("lightbox-img");
+  if (!lb || !img) return;
+  img.src = src;
+  img.alt = alt || "";
+  lb.classList.add("open");
+}
+function closeLightbox() {
+  var lb = document.getElementById("lightbox");
+  if (lb) lb.classList.remove("open");
+}
+document.addEventListener("DOMContentLoaded", function () {
+  var lb = document.getElementById("lightbox");
+  if (!lb) return;
+  lb.addEventListener("click", function (e) {
+    if (e.target === lb || e.target.classList.contains("lightbox-close")) closeLightbox();
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") closeLightbox();
+  });
+});
