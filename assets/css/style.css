@@ -83,7 +83,14 @@ img{ max-width:100%; display:block; }
   max-width:1160px; margin:0 auto;
 }
 .brand{ display:flex; align-items:center; gap:12px; }
-.brand img{ height:48px; width:48px; border-radius:50%; object-fit:cover; }
+.brand img{
+  height:48px; width:48px; border-radius:50%; object-fit:cover;
+  animation: logo-glow-pulse 3s ease-in-out infinite;
+}
+@keyframes logo-glow-pulse{
+  0%,100%{ box-shadow: 0 0 0 0 rgba(184,134,11,.55); }
+  50%{ box-shadow: 0 0 0 7px rgba(184,134,11,0); }
+}
 .brand-text .title{ font-family:'Merriweather',serif; font-weight:700; color:var(--maroon); font-size:1.05rem; }
 .brand-text .sub{ font-size:.72rem; color:var(--grey); letter-spacing:.5px; }
 .nav{ display:flex; align-items:center; gap:22px; flex-wrap:nowrap; }
@@ -274,4 +281,56 @@ img{ max-width:100%; display:block; }
 .badge-info{
   background:#FFF4E5; border:1px solid #E8B93F; color:#8a5a00; font-size:.8rem; padding:14px 18px;
   border-radius:10px; margin: 18px 0;
+}
+
+/* ============================================================
+   Devotional motion graphics — faint "Ram" watermark texture
+   behind section content, plus infinite scrolling Ram columns
+   along the page edges (inspired by nakurwalebabaji.com)
+   ============================================================ */
+.section{ position:relative; overflow:hidden; }
+.section > *{ position:relative; z-index:1; }
+.section::before{
+  content:"";
+  position:absolute; inset:-40px;
+  z-index:0; pointer-events:none;
+  opacity:.05;
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='220'%20height='90'%3E%3Ctext%20x='110'%20y='50'%20font-size='19'%20fill='%23A8590A'%20text-anchor='middle'%20transform='rotate(4%20110%2050)'%20letter-spacing='2'%3E%E0%A5%A5%20%E0%A4%B0%E0%A4%BE%E0%A4%AE%20%E0%A5%A5%3C/text%3E%3C/svg%3E");
+  background-repeat: repeat;
+  animation: ram-float-y 22s ease-in-out infinite;
+}
+@keyframes ram-float-y{
+  0%,100%{ transform: translateY(0); }
+  50%{ transform: translateY(-22px); }
+}
+
+/* Fixed decorative columns of scrolling "राम" along both page edges */
+.ram-side-decor{
+  position:fixed; inset:0; z-index:5; pointer-events:none; overflow:hidden;
+  animation: ram-glow-pulse 3.5s ease-in-out infinite alternate;
+}
+.ram-side-col{ position:absolute; top:-15%; bottom:-15%; width:34px; overflow:hidden; }
+.ram-side-col.left{ left:8px; }
+.ram-side-col.right{ right:8px; }
+.ram-side-track{
+  display:flex; flex-direction:column; align-items:center; gap:26px;
+  width:max-content; padding:20px 0;
+  animation: ram-scroll-y 90s linear infinite;
+}
+.ram-side-track span{
+  writing-mode: vertical-rl; letter-spacing:.35em;
+  font-family:'Noto Serif Devanagari', serif; font-size:1rem;
+  color: var(--gold); text-shadow: 0 0 10px rgba(184,134,11,.55), 0 0 4px rgba(184,134,11,.4);
+  white-space:nowrap;
+}
+@keyframes ram-scroll-y{
+  from{ transform: translateY(0); }
+  to{ transform: translateY(-50%); }
+}
+@keyframes ram-glow-pulse{
+  from{ opacity:.22; }
+  to{ opacity:.5; }
+}
+@media (max-width: 1100px){
+  .ram-side-decor{ display:none; }
 }
